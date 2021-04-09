@@ -1,0 +1,136 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eaedf2;
+}
+
+.fundo-1{
+    background-color: #eaedf2;
+}
+
+.card{
+    padding:10px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin:5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card input{
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+    transition:0.5s;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+
+.card input:checked{
+    height: 20px;
+    width: 15px;
+    transition:0.5s
+}
+
+.card:hover{
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+.card img{
+    vertical-align: middle;
+}
+
+/* usuarios */
+
+
+
+.sidebyside{
+    display: flex;
+}
+
+.sidebyside > div{
+    flex:1;
+    margin:0px 20px;
+}
+
+/* modal */
+
+#checkmodal{
+   display: none;
+}
+
+#checkmodal + div{pointer-events: none;}
+
+#checkmodal:checked + div{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.2s;
+    pointer-events: unset;
+}
+
+#checkmodal:checked + div > div{transform: translateY(0px);transition: 0.2s;}
+#checkmodal + div > div{transform: translateY(-50px);transition: 0.2s;}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: #00000055;
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.modal > div{
+    padding:10px;
+    width: 550px;
+    height: 600px;
+    max-height: 90%;
+    max-width: 90%;
+    background-color: white;
+    box-shadow: 0px 0px 10px #00000055;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.modal > div iframe{
+    display: block;
+    width: 100%;
+    border:none;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.modal > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* colunas */
+.col{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+/* .col > div{width: 50%;} */
+
+@media (max-width: 800px){
+    .col{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 600px){
+    .col{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
